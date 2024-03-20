@@ -1,0 +1,44 @@
+﻿@page
+@model WebApplication1.Pages.CountryModel
+@{
+}
+<h2>Country List</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+           <td> Name</td>
+           <td> Short Name</td>
+           <td> Country Code</td>
+
+        </tr>
+    </thead>
+    <tbody>
+      @*   @foreach(var item in Model.Countries)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.ShortName</td>
+                <td>@item.CountryCode</td>
+            </tr>
+        } *@
+
+
+        @if (Model.Countries != null)
+        {
+            foreach (var item in Model.Countries)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.ShortName</td>
+                    <td>@item.CountryCode</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3">No countries available</td>
+            </tr>
+        }
+    </tbody>
+</table>
